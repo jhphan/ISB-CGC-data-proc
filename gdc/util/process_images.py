@@ -185,7 +185,7 @@ def process_data_image_records(config, program, image_config, image_type, rows, 
     else:
         log.info('\t\tno rows to update for data records')
     
-def process_sanple_image_records(config, program, image_config, image_type, rows, log):
+def process_sample_image_records(config, program, image_config, image_type, rows, log):
     '''
     based on either the case_barcode (for radiology images) or the sample_barcode (for tissue or diagnostic images),
     creates a new metadata data record in the config-specified metadata data table
@@ -332,7 +332,7 @@ def process_image_records(config, program, image_config, image_type, rows, log):
     if image_type != 'Radiology':
         process_biospecimen_image_records(config, program, image_config, image_type, rows, log)
         sleep(1)
-        process_sanple_image_records(config, program, image_config, image_type, rows, log)
+        process_sample_image_records(config, program, image_config, image_type, rows, log)
         sleep(1)
     process_data_image_records(config, program, image_config, image_type, rows, log)
     sleep(1)
